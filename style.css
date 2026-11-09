@@ -30,6 +30,7 @@ a { color: inherit; }
     clip: rect(0 0 0 0); white-space: nowrap;
 }
 
+
 /* Header & nav */
 header {
     position: sticky; top: 0; z-index: 10;
