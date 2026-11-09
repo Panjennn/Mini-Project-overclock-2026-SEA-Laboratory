@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Hub - Portal Mahasiswa Baru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/sea-logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi Utama -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <span class="logo-badge"><img src="assets/sea-logo.png" alt="Logo SEA Laboratory"></span>
+                    <h1>Campus Hub</h1>
+                </a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#jadwal">Jadwal</a></li>
+                <li><a href="#lab-org">Lab &amp; Organisasi</a></li>
+                <li><a href="#todo">To-Do List</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Home / Landing Page -->
+        <section id="home" class="hero-section">
+            <div class="hero-inner">
+                <h2>Selamat Datang di Campus Hub</h2>
+                <p>Pusat informasi terpadu, pengelolaan aktivitas, dan pengenalan lingkungan kampus untuk mahasiswa baru.</p>
+                <div class="cta-group">
+                    <a href="#jadwal" class="btn btn-primary">Lihat jadwal kegiatan</a>
+                    <a href="#todo" class="btn btn-ghost">Mulai catat tugas</a>
+                </div>
+            </div>
+
+            <ul class="highlights" aria-label="Informasi penting">
+                <li>
+                    <span class="hl-date">1 Sep 2026</span>
+                    <strong>PKKMB</strong>
+                    <span>Gedung Keong TUCH, 05.00 WIB. Kemeja putih dan celana hitam tidak ketat.</span>
+                </li>
+                <li>
+                    <span class="hl-date">3 Sep 2026</span>
+                    <strong>Open House Lab &amp; Komunitas</strong>
+                    <span>Gedung TULT 14.05 SEA Laboratory, 09.00 WIB.</span>
+                </li>
+                <li>
+                    <span class="hl-date">Jadwal kuliah</span>
+                    <strong>Sirama &amp; MyTelU</strong>
+                    <span>Cek jadwal perkuliahan lengkap di dua portal ini.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 2. Jadwal Kegiatan -->
+        <section id="jadwal" class="content-section">
+            <h2>Jadwal Kegiatan Mahasiswa Baru</h2>
+            <div class="events-grid">
+                <article class="event-card">
+                    <h3>Pengenalan Kehidupan Kampus (PKKMB)</h3>
+                    <p><strong>Tanggal &amp; Waktu:</strong> 1 September 2026 | 05.00 - 16.00 WIB</p>
+                    <p><strong>Lokasi:</strong> Gedung Keong TUCH</p>
+                    <p><strong>Keterangan:</strong> Wajib hadir tepat waktu dengan pakaian kemeja putih dan celana hitam tidak ketat.</p>
+                </article>
+
+                <article class="event-card">
+                    <h3>Open House Laboratorium &amp; Komunitas</h3>
+                    <p><strong>Tanggal &amp; Waktu:</strong> 3 September 2026 | 09.00 - 12.00 WIB</p>
+                    <p><strong>Lokasi:</strong> Gedung TULT 14.05 SEA Laboratory</p>
+                    <p><strong>Keterangan:</strong> Sesi tur dan pameran karya laboratorium.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3. Informasi Lab / Organisasi -->
+        <section id="lab-org" class="content-section">
+            <h2>Informasi Lab &amp; Organisasi</h2>
+            <div class="lab-grid">
+                <article class="lab-card">
+                    <h3>SEA Laboratory</h3>
+                    <p><strong>Fokus Kegiatan:</strong> Software Engineering, Web Development, dan Cloud Architecture.</p>
+                    <p><strong>Informasi:</strong> Laboratorium riset yang berfokus pada pengembangan aplikasi dan rekayasa perangkat lunak.</p>
+                </article>
+
+                <article class="lab-card">
+                    <h3>Himpunan Mahasiswa Teknik Komputer (HMTK)</h3>
+                    <p><strong>Fokus Kegiatan:</strong> Pengembangan kepemimpinan, advokasi mahasiswa, dan kegiatan sosial.</p>
+                    <p><strong>Informasi:</strong> Organisasi resmi tingkat jurusan sebagai wadah aspirasi seluruh mahasiswa.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. To-Do List -->
+        <section id="todo" class="content-section">
+            <h2>To-Do List Aktivitas</h2>
+            <form class="todo-input-container" id="todo-form">
+                <label for="todo-input" class="sr-only">Tugas baru</label>
+                <input type="text" id="todo-input" placeholder="Masukkan tugas baru..." maxlength="120" autocomplete="off">
+                <button type="submit" id="add-todo-btn">Tambah Tugas</button>
+            </form>
+            <p id="todo-error" class="error-text" role="alert"></p>
+            <p id="todo-count" class="todo-count" aria-live="polite"></p>
+
+            <ul id="todo-list" class="todo-list">
+                <!-- Elemen tugas ditambahkan secara dinamis via JavaScript -->
+            </ul>
+        </section>
+
+        <!-- 5. FAQ (Accordion) -->
+        <section id="faq" class="content-section">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="accordion">
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">Dimana saya bisa melihat jadwal perkuliahan lengkap?</button>
+                    <div class="faq-content">
+                        <p>Jadwal perkuliahan dapat diakses melalui Sirama dan MyTelU.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">Bagaimana cara mendaftar ke SEA Laboratory?</button>
+                    <div class="faq-content">
+                        <p>Pendaftaran dibuka berkala saat masa <em>open recruitment</em>. Pantau kanal informasi resmi lab dan section Lab &amp; Organisasi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Contact / Feedback -->
+        <section id="contact" class="content-section">
+            <h2>Hubungi Kami / Feedback</h2>
+            <form id="feedback-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Nama Lengkap:</label>
+                    <input type="text" id="name" name="name" required placeholder="Nama Anda" autocomplete="name">
+                    <span class="error-text" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Kategori:</label>
+                    <select id="category" name="category" required>
+                        <option value="">-- Pilih Kategori --</option>
+                        <option value="pertanyaan">Pertanyaan</option>
+                        <option value="saran">Saran / Feedback</option>
+                        <option value="kendala">Laporan Kendala</option>
+                    </select>
+                    <span class="error-text" id="category-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Pesan:</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Tuliskan pesan atau saran Anda..."></textarea>
+                    <span class="error-text" id="message-error"></span>
+                </div>
+
+                <button type="submit" id="submit-btn">Kirim Pesan</button>
+                <p id="form-success" class="success-text" role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Campus Hub - SEA Laboratory Overclock Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
