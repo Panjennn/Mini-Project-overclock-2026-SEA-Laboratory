@@ -429,7 +429,6 @@ body { transition: background .3s, color .3s; }
 #palette-list li[aria-selected="true"] { background: var(--sea-blue-light); }
 .palette-hint { padding: 8px 18px; font-size: .78rem; color: var(--text-muted); border-top: 1px solid var(--border-color); }
 
-/* Notifikasi dan konfeti */
 .toast {
     position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 60; padding: 10px 18px;
     border-radius: 999px; font-size: .9rem; background: var(--dark-bg); color: #fff;
@@ -450,10 +449,8 @@ body { transition: background .3s, color .3s; }
     .caret { animation: none; }
 }
 
-/* Garis bawah judul */
 .content-section > h2::after { content: ''; display: block; width: 48px; height: 4px; margin-top: 10px; border-radius: 99px; background: var(--sea-blue); }
 
-/* Ilustrasi maskot hero */
 .hero-inner { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .85fr); gap: 40px; align-items: center; }
 .hero-art { position: relative; display: flex; justify-content: center; align-items: center; min-height: 260px; }
 .hero-art::before {
@@ -467,7 +464,6 @@ body { transition: background .3s, color .3s; }
 }
 @keyframes floaty { 50% { transform: translateY(-12px); } }
 
-/* Kotak tanggal di kartu jadwal */
 .event-card { padding-left: 96px; }
 .event-date {
     position: absolute; left: 20px; top: 24px; width: 56px; padding: 8px 0; border-radius: 12px; text-align: center;
@@ -477,7 +473,6 @@ body { transition: background .3s, color .3s; }
 .event-date span { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
 :root[data-theme="dark"] .event-date { color: var(--sea-blue); }
 
-/* Ilustrasi pas data kosong */
 .todo-empty { display: flex; align-items: center; gap: 14px; }
 .todo-empty img { width: 64px; height: auto; flex-shrink: 0; }
 .faq-none { display: flex; align-items: center; gap: 14px; }
@@ -485,7 +480,6 @@ body { transition: background .3s, color .3s; }
 .faq-none img { width: 72px; height: auto; }
 .overlay-sticker { width: 92px; height: auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,.4)); }
 
-/* Tata letak bagian kontak */
 .contact-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr); gap: 28px; align-items: start; }
 #feedback-form { max-width: none; }
 .contact-info {
@@ -498,7 +492,6 @@ body { transition: background .3s, color .3s; }
 .contact-tips { list-style: none; display: grid; gap: 10px; margin-top: 16px; text-align: left; font-size: .92rem; }
 .contact-tips li { padding-left: 12px; border-left: 3px solid var(--sea-blue); }
 
-/* Link navigasi bawah */
 .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-bottom: 12px; }
 .footer-links a { text-decoration: none; font-weight: 500; color: #cbd5e1; }
 .footer-links a:hover { color: var(--sea-blue); }
