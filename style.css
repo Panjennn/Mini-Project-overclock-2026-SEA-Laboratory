@@ -123,8 +123,16 @@ input[type="text"]:focus, select:focus, textarea:focus {
 button[type="submit"], #add-todo-btn {
     font: inherit; font-weight: 700; padding: 12px 22px; border-radius: 10px;
     border: 0; background: var(--sea-blue-dark); color: var(--white); cursor: pointer; white-space: nowrap;
+    /* Tambahan untuk memperhalus animasi timbul */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
-button[type="submit"]:hover { background: var(--dark-bg); }
+
+button[type="submit"]:hover, #add-todo-btn:hover { 
+    background: var(--dark-bg); 
+    /* Tambahan efek naik ke atas sebesar 3px dan bayangan */
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md); 
+}
 .todo-count { margin-top: 12px; color: var(--text-muted); font-size: 0.9rem; }
 .todo-list { list-style: none; margin-top: 12px; display: grid; gap: 10px; }
 .todo-item {
