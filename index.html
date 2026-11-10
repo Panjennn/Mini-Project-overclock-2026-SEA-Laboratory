@@ -18,7 +18,7 @@
 </head>
 <body>
 
-    <!-- Navigasi Utama -->
+    <!-- Menu Atas -->
     <header>
         <nav>
             <div class="logo">
@@ -47,7 +47,7 @@
     </header>
 
     <main>
-        <!-- 1. Home / Landing Page -->
+        <!-- Halaman Depan -->
         <section id="home" class="hero-section">
             <div class="hero-bubbles" id="hero-bubbles" aria-hidden="true"></div>
             <div class="hero-inner">
@@ -85,7 +85,7 @@
             </ul>
         </section>
 
-        <!-- 2. Jadwal Kegiatan -->
+        <!-- Jadwal Kegiatan Kampus -->
         <section id="jadwal" class="content-section">
             <h2>Jadwal Kegiatan Mahasiswa Baru</h2>
             <p class="next-event" id="next-event" aria-live="polite"></p>
@@ -108,7 +108,7 @@
             </div>
         </section>
 
-        <!-- 3. Informasi Lab / Organisasi -->
+        <!-- Info Lab dan Ormawa -->
         <section id="lab-org" class="content-section">
             <h2>Informasi Lab &amp; Organisasi</h2>
             <div class="lab-grid">
@@ -126,7 +126,7 @@
             </div>
         </section>
 
-        <!-- 4. To-Do List & Focus Timer -->
+        <!-- Catatan Tugas dan Timer -->
         <section id="todo" class="content-section">
             <h2>To-Do List Aktivitas</h2>
             <div class="todo-layout">
@@ -165,7 +165,7 @@
             </div>
         </section>
 
-        <!-- 5. Mini Game -->
+        <!-- Mini Game Santai -->
         <section id="game" class="content-section">
             <h2>Mini Game</h2>
             <p class="game-desc">Pilih salah satu dari 3 permainan, lalu tekan Mulai. Rekor setiap permainan disimpan terpisah.</p>
@@ -189,7 +189,7 @@
             </div>
         </section>
 
-        <!-- 6. FAQ (Accordion) -->
+        <!-- Tanya Jawab -->
         <section id="faq" class="content-section">
             <h2>Frequently Asked Questions (FAQ)</h2>
             <label for="faq-search" class="sr-only">Cari pertanyaan</label>
@@ -233,7 +233,7 @@
             <div id="faq-none" class="faq-none" hidden><img src="assets/sticker-think.png" alt=""><p>Tidak ada pertanyaan yang cocok. Coba kata kunci lain atau tulis lewat form Kontak.</p></div>
         </section>
 
-        <!-- 7. Contact / Feedback -->
+        <!-- Kontak dan Masukan -->
         <section id="contact" class="content-section">
             <h2>Hubungi Kami / Feedback</h2>
             <div class="contact-layout">
@@ -278,6 +278,7 @@
         </section>
     </main>
 
+    <!-- Bagian Bawah -->
     <footer>
         <div class="footer-links">
             <a href="#home">Beranda</a><a href="#jadwal">Jadwal</a><a href="#lab-org">Lab &amp; Organisasi</a>
@@ -286,12 +287,12 @@
         <p>&copy; 2026 Campus Hub - SEA Laboratory Overclock Project</p>
     </footer>
 
-    <!-- Efek global -->
+    <!-- Efek dan Animasi -->
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
     <canvas class="confetti" id="confetti" aria-hidden="true" hidden></canvas>
     <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-    <!-- Palet perintah (Ctrl+K) -->
+    <!-- Menu Pencarian Cepat (Ctrl+K) -->
     <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Palet perintah" hidden>
         <div class="palette-box">
             <input type="text" id="palette-input" placeholder="Ketik perintah atau tujuan..." autocomplete="off" aria-controls="palette-list">
@@ -300,10 +301,10 @@
         </div>
     </div>
 
-    <!-- Toggle jejak kursor -->
+    <!-- Tombol Jejak Kursor -->
     <button type="button" class="trail-toggle" id="trail-toggle" aria-pressed="true">Jejak kursor: ON</button>
 
-    <!-- Maskot / stiker -->
+    <!-- Maskot Pojok Layar -->
     <div class="sticker" id="sticker">
         <div class="sticker-bubble" id="sticker-bubble" role="status" aria-live="polite" hidden></div>
         <button type="button" class="sticker-btn" id="sticker-btn" aria-label="Maskot Campus Hub, klik untuk tips">
