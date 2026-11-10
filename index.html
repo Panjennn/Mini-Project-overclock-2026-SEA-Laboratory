@@ -1,9 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        try {
+            var t = localStorage.getItem('campusHubTheme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+    </script>
     <title>Campus Hub - Portal Mahasiswa Baru</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,29 +27,42 @@
                     <h1>Campus Hub</h1>
                 </a>
             </div>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
-                <span></span><span></span><span></span>
-            </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Beranda</a></li>
                 <li><a href="#jadwal">Jadwal</a></li>
                 <li><a href="#lab-org">Lab &amp; Organisasi</a></li>
                 <li><a href="#todo">To-Do List</a></li>
+                <li><a href="#game">Mini Game</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
+            <div class="nav-actions">
+                <button type="button" class="icon-btn" id="palette-btn" aria-label="Buka pencarian perintah" title="Cari (Ctrl+K)">&#128269;</button>
+                <button type="button" class="icon-btn" id="theme-btn" aria-label="Ganti tema" title="Ganti tema">&#9790;</button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </nav>
     </header>
 
     <main>
         <!-- 1. Home / Landing Page -->
         <section id="home" class="hero-section">
+            <div class="hero-bubbles" id="hero-bubbles" aria-hidden="true"></div>
             <div class="hero-inner">
-                <h2>Selamat Datang di Campus Hub</h2>
-                <p>Pusat informasi terpadu, pengelolaan aktivitas, dan pengenalan lingkungan kampus untuk mahasiswa baru.</p>
-                <div class="cta-group">
-                    <a href="#jadwal" class="btn btn-primary">Lihat jadwal kegiatan</a>
-                    <a href="#todo" class="btn btn-ghost">Mulai catat tugas</a>
+                <div class="hero-copy">
+                    <div class="hero-eyebrow">Satu tempat untuk <span id="typed">jadwal kegiatan</span><span class="caret" aria-hidden="true"></span></div>
+                    <h2>Selamat Datang di Campus Hub</h2>
+                    <p>Pusat informasi terpadu, pengelolaan aktivitas, dan pengenalan lingkungan kampus untuk mahasiswa baru.</p>
+                    <div class="cta-group">
+                        <a href="#jadwal" class="btn btn-primary">Lihat jadwal kegiatan</a>
+                        <a href="#todo" class="btn btn-ghost">Mulai catat tugas</a>
+                    </div>
+                </div>
+                <div class="hero-art">
+                    <img src="assets/sticker-happy.png" alt="Maskot Campus Hub tersenyum">
+                    <span class="hero-tag">Halo, maba! &#128075;</span>
                 </div>
             </div>
 
@@ -52,12 +70,12 @@
                 <li>
                     <span class="hl-date">1 Sep 2026</span>
                     <strong>PKKMB</strong>
-                    <span>Gedung Telkom University Convention Hall (TUCH), 05.00 WIB. Kemeja putih dan celana hitam tidak ketat.</span>
+                    <span>Gedung Keong TUCH, 05.00 WIB. Kemeja putih dan celana hitam tidak ketat.</span>
                 </li>
                 <li>
                     <span class="hl-date">3 Sep 2026</span>
                     <strong>Open House Lab &amp; Komunitas</strong>
-                    <span>Gedung Telkom University Landmark Tower (TULT 14.05 SEA Laboratory), 09.00 WIB.</span>
+                    <span>Gedung TULT 14.05 SEA Laboratory, 09.00 WIB.</span>
                 </li>
                 <li>
                     <span class="hl-date">Jadwal kuliah</span>
@@ -70,19 +88,22 @@
         <!-- 2. Jadwal Kegiatan -->
         <section id="jadwal" class="content-section">
             <h2>Jadwal Kegiatan Mahasiswa Baru</h2>
+            <p class="next-event" id="next-event" aria-live="polite"></p>
             <div class="events-grid">
-                <article class="event-card">
+                <article class="event-card" data-title="PKKMB" data-start="2026-09-01T05:00:00+07:00" data-end="2026-09-01T16:00:00+07:00" data-loc="Gedung Keong TUCH">
+                    <span class="status-badge"></span>
                     <h3>Pengenalan Kehidupan Kampus (PKKMB)</h3>
                     <p><strong>Tanggal &amp; Waktu:</strong> 1 September 2026 | 05.00 - 16.00 WIB</p>
-                    <p><strong>Lokasi:</strong> Gedung Telkom University Convention Hall (TUCH)</p>
+                    <p><strong>Lokasi:</strong> Gedung Keong TUCH</p>
                     <p><strong>Keterangan:</strong> Wajib hadir tepat waktu dengan pakaian kemeja putih dan celana hitam tidak ketat.</p>
                 </article>
 
-                <article class="event-card">
+                <article class="event-card" data-title="Open House Laboratorium &amp; Komunitas" data-start="2026-09-03T09:00:00+07:00" data-end="2026-09-03T12:00:00+07:00" data-loc="Gedung TULT 14.05 SEA Laboratory">
+                    <span class="status-badge"></span>
                     <h3>Open House Laboratorium &amp; Komunitas</h3>
                     <p><strong>Tanggal &amp; Waktu:</strong> 3 September 2026 | 09.00 - 12.00 WIB</p>
                     <p><strong>Lokasi:</strong> Gedung TULT 14.05 SEA Laboratory</p>
-                    <p><strong>Keterangan:</strong> Sesi tur dan pameran hasil laboratorium.</p>
+                    <p><strong>Keterangan:</strong> Sesi tur dan pameran karya laboratorium.</p>
                 </article>
             </div>
         </section>
@@ -93,7 +114,7 @@
             <div class="lab-grid">
                 <article class="lab-card">
                     <h3>SEA Laboratory</h3>
-                    <p><strong>Fokus Kegiatan:</strong> Software Engineering, Web Development, dan Game Development.</p>
+                    <p><strong>Fokus Kegiatan:</strong> Software Engineering, Web Development, dan Cloud Architecture.</p>
                     <p><strong>Informasi:</strong> Laboratorium riset yang berfokus pada pengembangan aplikasi dan rekayasa perangkat lunak.</p>
                 </article>
 
@@ -105,25 +126,74 @@
             </div>
         </section>
 
-        <!-- 4. To-Do List -->
+        <!-- 4. To-Do List & Focus Timer -->
         <section id="todo" class="content-section">
             <h2>To-Do List Aktivitas</h2>
-            <form class="todo-input-container" id="todo-form">
-                <label for="todo-input" class="sr-only">Tugas baru</label>
-                <input type="text" id="todo-input" placeholder="Masukkan tugas baru..." maxlength="120" autocomplete="off">
-                <button type="submit" id="add-todo-btn">Tambah Tugas</button>
-            </form>
-            <p id="todo-error" class="error-text" role="alert"></p>
-            <p id="todo-count" class="todo-count" aria-live="polite"></p>
+            <div class="todo-layout">
+                <div class="todo-panel">
+                    <form class="todo-input-container" id="todo-form">
+                        <label for="todo-input" class="sr-only">Tugas baru</label>
+                        <input type="text" id="todo-input" placeholder="Masukkan tugas baru..." maxlength="120" autocomplete="off">
+                        <button type="submit" id="add-todo-btn">Tambah Tugas</button>
+                    </form>
+                    <p id="todo-error" class="error-text" role="alert"></p>
+                    <div class="todo-tools">
+                        <button type="button" class="chip todo-filter" data-filter="all" aria-pressed="true">Semua</button>
+                        <button type="button" class="chip todo-filter" data-filter="active" aria-pressed="false">Belum selesai</button>
+                        <button type="button" class="chip todo-filter" data-filter="done" aria-pressed="false">Selesai</button>
+                        <button type="button" class="chip" id="todo-clear">Hapus yang selesai</button>
+                    </div>
+                    <div class="todo-progress" aria-hidden="true"><span id="todo-bar"></span></div>
+                    <p id="todo-count" class="todo-count" aria-live="polite"></p>
+                    <ul id="todo-list" class="todo-list"></ul>
+                </div>
 
-            <ul id="todo-list" class="todo-list">
-                <!-- Elemen tugas ditambahkan secara dinamis via JavaScript -->
-            </ul>
+                <aside class="focus-card" aria-label="Fokus timer">
+                    <h3>Fokus Timer</h3>
+                    <div class="focus-modes" role="group" aria-label="Mode timer">
+                        <button type="button" class="focus-mode" data-min="25" aria-pressed="true">Fokus 25</button>
+                        <button type="button" class="focus-mode" data-min="5" aria-pressed="false">Istirahat 5</button>
+                        <button type="button" class="focus-mode" data-min="15" aria-pressed="false">Panjang 15</button>
+                    </div>
+                    <div class="focus-ring" id="focus-ring"><span id="focus-time">25:00</span></div>
+                    <div class="focus-actions">
+                        <button type="button" id="focus-start">Mulai</button>
+                        <button type="button" id="focus-reset">Reset</button>
+                    </div>
+                    <p id="focus-sessions">Sesi fokus selesai: 0</p>
+                </aside>
+            </div>
         </section>
 
-        <!-- 5. FAQ (Accordion) -->
+        <!-- 5. Mini Game -->
+        <section id="game" class="content-section">
+            <h2>Mini Game</h2>
+            <p class="game-desc">Pilih salah satu dari 3 permainan, lalu tekan Mulai. Rekor setiap permainan disimpan terpisah.</p>
+            <div class="game-tabs" role="group" aria-label="Pilih permainan">
+                <button type="button" class="game-tab" data-game="bubble" aria-pressed="true">Bubble Pop</button>
+                <button type="button" class="game-tab" data-game="slice" aria-pressed="false">&#127817; Fruit Slice</button>
+                <button type="button" class="game-tab" data-game="match" aria-pressed="false">&#127827; Fruit Match</button>
+            </div>
+            <div class="game-hud" aria-live="off">
+                <span>Skor: <strong id="game-score">0</strong></span>
+                <span>Waktu: <strong id="game-time">30</strong>s</span>
+                <span>Rekor: <strong id="game-best">0</strong></span>
+            </div>
+            <div class="game-arena" id="game-arena">
+                <div class="game-overlay" id="game-overlay">
+                    <img class="overlay-sticker" id="game-sticker" src="assets/sticker-happy.png" alt="">
+                    <h3 id="game-title">Bubble Pop</h3>
+                    <p id="game-msg"></p>
+                    <button type="button" id="game-start" class="btn btn-primary">Mulai</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FAQ (Accordion) -->
         <section id="faq" class="content-section">
             <h2>Frequently Asked Questions (FAQ)</h2>
+            <label for="faq-search" class="sr-only">Cari pertanyaan</label>
+            <input type="text" id="faq-search" class="faq-search" placeholder="Cari pertanyaan, misalnya: lab, jadwal, tugas..." autocomplete="off">
             <div class="accordion">
                 <div class="faq-item">
                     <button class="faq-header" aria-expanded="false">Dimana saya bisa melihat jadwal perkuliahan lengkap?</button>
@@ -138,45 +208,109 @@
                         <p>Pendaftaran dibuka berkala saat masa <em>open recruitment</em>. Pantau kanal informasi resmi lab dan section Lab &amp; Organisasi.</p>
                     </div>
                 </div>
+
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">Apa itu PKKMB dan bagaimana ketentuan hadirnya?</button>
+                    <div class="faq-content">
+                        <p>PKKMB adalah Pengenalan Kehidupan Kampus untuk mahasiswa baru. Hadir tepat waktu pada 1 September 2026 di Gedung Keong TUCH, dengan kemeja putih dan celana hitam tidak ketat.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">Kapan dan di mana Open House Laboratorium?</button>
+                    <div class="faq-content">
+                        <p>Open House berlangsung pada 3 September 2026 pukul 09.00 - 12.00 WIB di Gedung TULT 14.05 SEA Laboratory, berisi sesi tur dan pameran karya laboratorium.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">Apakah data To-Do List saya dikirim ke server?</button>
+                    <div class="faq-content">
+                        <p>Tidak. Tugas disimpan di Local Storage browser, jadi hanya ada di perangkat dan browser yang kamu pakai. Kalau data browser dihapus, daftar tugas ikut hilang.</p>
+                    </div>
+                </div>
             </div>
+            <div id="faq-none" class="faq-none" hidden><img src="assets/sticker-think.png" alt=""><p>Tidak ada pertanyaan yang cocok. Coba kata kunci lain atau tulis lewat form Kontak.</p></div>
         </section>
 
-        <!-- 6. Contact / Feedback -->
+        <!-- 7. Contact / Feedback -->
         <section id="contact" class="content-section">
             <h2>Hubungi Kami / Feedback</h2>
-            <form id="feedback-form" novalidate>
-                <div class="form-group">
-                    <label for="name">Nama Lengkap:</label>
-                    <input type="text" id="name" name="name" required placeholder="Nama Anda" autocomplete="name">
-                    <span class="error-text" id="name-error"></span>
-                </div>
+            <div class="contact-layout">
+                <aside class="contact-info">
+                    <img id="contact-sticker" src="assets/sticker-happy.png" alt="Maskot Campus Hub">
+                    <h3>Ada yang mau ditanyakan?</h3>
+                    <p>Tulis pertanyaan, saran, atau kendala yang kamu temui. Pesan masih berupa demo dan belum dikirim ke server.</p>
+                    <ul class="contact-tips">
+                        <li><strong>Pertanyaan</strong> untuk hal yang belum ada di FAQ.</li>
+                        <li><strong>Saran / Feedback</strong> untuk ide perbaikan Campus Hub.</li>
+                        <li><strong>Laporan Kendala</strong> jika ada fitur yang tidak berjalan.</li>
+                    </ul>
+                </aside>
+                <form id="feedback-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap:</label>
+                        <input type="text" id="name" name="name" required placeholder="Nama Anda" autocomplete="name">
+                        <span class="error-text" id="name-error"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label for="category">Kategori:</label>
-                    <select id="category" name="category" required>
-                        <option value="">-- Pilih Kategori --</option>
-                        <option value="pertanyaan">Pertanyaan</option>
-                        <option value="saran">Saran/Feedback</option>
-                        <option value="kendala">Laporan Kendala</option>
-                    </select>
-                    <span class="error-text" id="category-error"></span>
-                </div>
+                    <div class="form-group">
+                        <label for="category">Kategori:</label>
+                        <select id="category" name="category" required>
+                            <option value="">-- Pilih Kategori --</option>
+                            <option value="pertanyaan">Pertanyaan</option>
+                            <option value="saran">Saran / Feedback</option>
+                            <option value="kendala">Laporan Kendala</option>
+                        </select>
+                        <span class="error-text" id="category-error"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label for="message">Pesan:</label>
-                    <textarea id="message" name="message" rows="4" required placeholder="Tuliskan pesan atau saran Anda..."></textarea>
-                    <span class="error-text" id="message-error"></span>
-                </div>
+                    <div class="form-group">
+                        <label for="message">Pesan:</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Tuliskan pesan atau saran Anda..."></textarea>
+                        <span class="error-text" id="message-error"></span>
+                    </div>
 
-                <button type="submit" id="submit-btn">Kirim Pesan</button>
-                <p id="form-success" class="success-text" role="status"></p>
-            </form>
+                    <button type="submit" id="submit-btn">Kirim Pesan</button>
+                    <p id="form-success" class="success-text" role="status"></p>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
+        <div class="footer-links">
+            <a href="#home">Beranda</a><a href="#jadwal">Jadwal</a><a href="#lab-org">Lab &amp; Organisasi</a>
+            <a href="#todo">To-Do</a><a href="#game">Mini Game</a><a href="#faq">FAQ</a><a href="#contact">Kontak</a>
+        </div>
         <p>&copy; 2026 Campus Hub - SEA Laboratory Overclock Project</p>
     </footer>
+
+    <!-- Efek global -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <canvas class="confetti" id="confetti" aria-hidden="true" hidden></canvas>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <!-- Palet perintah (Ctrl+K) -->
+    <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Palet perintah" hidden>
+        <div class="palette-box">
+            <input type="text" id="palette-input" placeholder="Ketik perintah atau tujuan..." autocomplete="off" aria-controls="palette-list">
+            <ul id="palette-list" role="listbox"></ul>
+            <p class="palette-hint">Panah atas/bawah memilih, Enter menjalankan, Esc menutup</p>
+        </div>
+    </div>
+
+    <!-- Toggle jejak kursor -->
+    <button type="button" class="trail-toggle" id="trail-toggle" aria-pressed="true">Jejak kursor: ON</button>
+
+    <!-- Maskot / stiker -->
+    <div class="sticker" id="sticker">
+        <div class="sticker-bubble" id="sticker-bubble" role="status" aria-live="polite" hidden></div>
+        <button type="button" class="sticker-btn" id="sticker-btn" aria-label="Maskot Campus Hub, klik untuk tips">
+            <img src="assets/sticker.png" alt="">
+        </button>
+        <button type="button" class="sticker-close" id="sticker-close" aria-label="Sembunyikan maskot">&times;</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
