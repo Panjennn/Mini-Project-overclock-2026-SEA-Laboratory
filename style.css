@@ -388,12 +388,38 @@ body { transition: background .3s, color .3s; }
 .btn-cal:hover { background: var(--sea-blue-dark); color: #fff; }
 
 .todo-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr); gap: 24px; align-items: start; }
+.todo-tools { 
+    display: inline-flex; 
+    flex-wrap: wrap; 
+    background: var(--border-color);
+    padding: 4px; 
+    border-radius: 999px;
+    gap: 4px; 
+    margin-top: 10px; 
+}
+
 .chip {
     font: inherit; font-size: .85rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; cursor: pointer;
-    border: 1.5px solid var(--border-color); background: var(--surface); color: var(--text-main);
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
 }
-.chip[aria-pressed="true"] { background: var(--sea-blue-dark); border-color: var(--sea-blue-dark); color: #fff; }
-.todo-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+
+.chip:hover:not([aria-pressed="true"]) {
+    color: var(--text-main);
+}
+
+.chip[aria-pressed="true"] { 
+    background: var(--surface); 
+    color: var(--text-main); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.chip:active {
+    transform: scale(0.96);
+}
+
 .todo-progress { height: 8px; margin-top: 14px; border-radius: 99px; background: var(--border-color); overflow: hidden; }
 #todo-bar { display: block; height: 100%; width: 0; background: var(--sea-blue); transition: width .3s; }
 
