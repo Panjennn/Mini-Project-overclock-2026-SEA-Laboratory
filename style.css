@@ -1,4 +1,4 @@
-/* Variabel warna dasar */
+
 :root {
     --sea-blue: #28a9e0;
     --sea-blue-dark: #1b87b8;
@@ -18,7 +18,6 @@
     --input-border: #cbd5e1;
 }
 
-/* Reset dan tata letak halaman */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body {
@@ -34,7 +33,6 @@ a { color: inherit; }
     clip: rect(0 0 0 0); white-space: nowrap;
 }
 
-/* Menu navigasi atas */
 header {
     position: sticky; top: 0; z-index: 10;
     background: var(--dark-bg); color: var(--white);
@@ -66,7 +64,6 @@ nav {
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Banner sambutan depan */
 .hero-section { background: var(--dark-bg); color: var(--white); padding: 72px 20px 0; }
 .hero-inner { max-width: 1100px; margin: 0 auto; }
 .hero-section h2 {
@@ -98,7 +95,6 @@ nav {
 .highlights strong { font-size: 1.1rem; color: var(--white); }
 .hl-date { font-weight: 700; color: var(--sea-blue); }
 
-/* Bagian konten dan kartu */
 .content-section { max-width: 1100px; margin: 0 auto; padding: 64px 20px 8px; }
 .content-section h2 {
     font-size: 1.7rem; font-weight: 800; letter-spacing: -0.015em; margin-bottom: 24px;
@@ -116,7 +112,6 @@ nav {
 .event-card p, .lab-card p { margin-top: 6px; color: var(--text-main); font-size: 0.97rem; }
 .event-card strong, .lab-card strong { color: var(--sea-blue-dark); }
 
-/* Kotak input to-do list */
 .todo-input-container { display: flex; gap: 10px; }
 input[type="text"], select, textarea {
     width: 100%; padding: 12px 14px; font: inherit; color: inherit;
@@ -149,7 +144,6 @@ button[type="submit"]:hover { background: var(--dark-bg); }
 .todo-delete:hover { background: rgba(239,68,68,.1); border-color: var(--danger); }
 .todo-empty { color: var(--text-muted); padding: 16px; border: 1.5px dashed var(--input-border); border-radius: 10px; }
 
-/* Tampilan tanya jawab FAQ */
 .accordion { display: grid; gap: 10px; max-width: 800px; }
 .faq-item {
     background: var(--surface); border: 1px solid var(--border-color);
@@ -169,7 +163,6 @@ button[type="submit"]:hover { background: var(--dark-bg); }
 .faq-content { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
 .faq-content p { padding: 14px 18px 18px; color: var(--text-main); }
 
-/* Kotak kirim pesan */
 #feedback-form {
     max-width: 640px; display: grid; gap: 18px; background: var(--surface);
     border: 1px solid var(--border-color); border-radius: var(--radius);
@@ -183,13 +176,11 @@ textarea { resize: vertical; }
 .success-text { color: color-mix(in srgb, var(--success) 70%, black); font-weight: 700; }
 #submit-btn { justify-self: start; }
 
-/* Bagian paling bawah web */
 footer {
     margin-top: 72px; background: var(--dark-bg); color: #cbd5e1; text-align: center;
     padding: 24px 20px; font-size: 0.9rem; border-top: 3px solid var(--sea-blue);
 }
 
-/* Responsif layar HP */
 @media (max-width: 760px) {
     .nav-toggle { display: block; }
     .nav-links { display: none; flex-direction: column; width: 100%; padding-bottom: 12px; }
@@ -207,7 +198,6 @@ footer {
     * { transition: none !important; }
 }
 
-/* Gelembung latar belakang */
 .hero-section { position: relative; overflow: hidden; }
 .hero-inner, .highlights { position: relative; z-index: 1; }
 .hero-bubbles { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
@@ -222,7 +212,6 @@ footer {
     100% { transform: translate(var(--sway), calc(var(--rise) * -1)); opacity: 0; }
 }
 
-/* Tampilan arena mini game */
 .game-desc { max-width: 60ch; color: var(--text-muted); margin: -8px 0 16px; }
 .game-hud { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 10px; font-weight: 500; }
 .game-hud strong { color: var(--sea-blue-dark); font-size: 1.15rem; }
@@ -261,7 +250,6 @@ footer {
 .g-pts.neg { color: var(--danger); }
 @keyframes ptsUp { to { transform: translateY(-40px); opacity: 0; } }
 
-/* Maskot dan balon obrolan */
 .sticker { position: fixed; left: 0; bottom: 0; z-index: 20; animation: peekIn .6s ease-out both; }
 .sticker[hidden] { display: none; }
 .sticker-btn { display: block; background: none; border: 0; padding: 0; cursor: pointer; }
@@ -298,7 +286,6 @@ footer {
     .sticker, .sticker-btn.wiggle img { animation: none; }
 }
 
-/* Elemen game: tombol tab, buah, dan kartu */
 .game-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
 .game-tab {
     font: inherit; font-weight: 700; padding: 9px 16px; border-radius: 999px; cursor: pointer;
@@ -331,7 +318,6 @@ footer {
 .m-card.open .m-front, .m-card.done .m-front { opacity: 0; }
 .m-card.done { background: var(--sea-blue-light); outline: 2px solid var(--sea-blue); }
 
-/* Jejak kursor */
 .trail-dot {
     position: fixed; z-index: 9999; pointer-events: none; border-radius: 50%;
     border: 1px solid rgba(40,169,224,.65);
@@ -348,7 +334,6 @@ footer {
 .trail-toggle[aria-pressed="false"] { border-color: #475569; color: #cbd5e1; }
 .trail-toggle[hidden] { display: none; }
 
-/* Warna tema gelap */
 :root[data-theme="dark"] {
     color-scheme: dark;
     --bg-light: #0b1120; --surface: #111a2e; --text-main: #e2e8f0; --text-muted: #94a3b8;
@@ -363,7 +348,6 @@ footer {
 :root[data-theme="dark"] .game-tab[aria-pressed="true"] { background: var(--sea-blue-dark); border-color: var(--sea-blue-dark); }
 body { transition: background .3s, color .3s; }
 
-/* Tombol aksi menu atas */
 .nav-links { margin-left: auto; margin-right: 12px; }
 .nav-links a { padding: 8px 10px; }
 .nav-actions { display: flex; align-items: center; gap: 6px; }
@@ -373,7 +357,6 @@ body { transition: background .3s, color .3s; }
 }
 .icon-btn:hover { background: rgba(255,255,255,.12); }
 
-/* Efek scroll dan kartu 3D */
 .scroll-progress {
     position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 30; pointer-events: none;
     background: var(--sea-blue); transform: scaleX(0); transform-origin: left;
@@ -383,12 +366,10 @@ body { transition: background .3s, color .3s; }
 .event-card, .lab-card { position: relative; transition: transform .15s ease-out, box-shadow .2s; }
 .event-card:hover, .lab-card:hover { box-shadow: var(--shadow-md); }
 
-/* Teks animasi ngetik */
 .hero-eyebrow { font-weight: 700; color: var(--sea-blue); margin-bottom: 14px; min-height: 1.7em; }
 .caret { display: inline-block; width: 2px; height: 1.1em; margin-left: 3px; vertical-align: text-bottom; background: var(--sea-blue); animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* Label status jadwal */
 .next-event { margin: -8px 0 18px; color: var(--text-muted); }
 .status-badge { display: inline-block; margin-bottom: 10px; padding: 3px 12px; border-radius: 999px; font-size: .75rem; font-weight: 800; }
 .status-badge.soon { background: var(--sea-blue-light); color: var(--sea-blue-dark); }
@@ -400,7 +381,6 @@ body { transition: background .3s, color .3s; }
 }
 .btn-cal:hover { background: var(--sea-blue-dark); color: #fff; }
 
-/* Tata letak to-do dan filter */
 .todo-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr); gap: 24px; align-items: start; }
 .chip {
     font: inherit; font-size: .85rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; cursor: pointer;
@@ -411,7 +391,6 @@ body { transition: background .3s, color .3s; }
 .todo-progress { height: 8px; margin-top: 14px; border-radius: 99px; background: var(--border-color); overflow: hidden; }
 #todo-bar { display: block; height: 100%; width: 0; background: var(--sea-blue); transition: width .3s; }
 
-/* Kotak timer Pomodoro */
 .focus-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 22px; text-align: center; box-shadow: var(--shadow-sm); }
 .focus-card h3 { margin-bottom: 12px; }
 .focus-modes { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
@@ -432,12 +411,10 @@ body { transition: background .3s, color .3s; }
 #focus-reset { border: 1.5px solid var(--border-color); background: transparent; color: var(--text-main); }
 #focus-sessions { margin-top: 12px; font-size: .9rem; color: var(--text-muted); }
 
-/* Kolom pencarian FAQ */
 .faq-search { max-width: 800px; margin-bottom: 14px; }
 .faq-item[hidden], .faq-none[hidden] { display: none; }
 .faq-none { margin-top: 14px; color: var(--text-muted); }
 
-/* Modal pencarian cepat Ctrl+K */
 .palette {
     position: fixed; inset: 0; z-index: 100; display: flex; justify-content: center; align-items: flex-start;
     padding-top: 15vh; background: rgba(15,23,42,.6); backdrop-filter: blur(4px);
